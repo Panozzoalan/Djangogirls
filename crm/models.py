@@ -18,3 +18,13 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Empleado(models.Model):
+    nombre=models.CharField(max_length=50)
+    apellido=models.CharField(max_length=50)
+    correo=models.CharField(max_length=50)
+    celular=models.IntegerField()
+    fecha_de_ingreso=models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return (self.apellido+", "+self.nombre)
